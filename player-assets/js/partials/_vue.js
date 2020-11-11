@@ -16,6 +16,18 @@ var app = new Vue({
       textAnimation: null,
       previousGradient: null,
       gradientOpacity: 0,
+
+      gradients: [
+        { 
+          light: null,
+          dark: null
+        },
+        { 
+          light: null,
+          dark: null
+        },
+      ]
+
     },
     paused: false,
     currentTrack: 0,
@@ -258,7 +270,6 @@ var app = new Vue({
       self.current.page = song.page;
       self.newColor();
       audio.play();
-      //console.log(audio);
     },
 
     stopSong() {
@@ -274,9 +285,7 @@ var app = new Vue({
         self.newColor();
       } else {
         self.previousColors = r;
-        self.current.previousGradient = self.current.background;
-        self.current.background = "radial-gradient(" + self.colors[r].light + ", " + self.colors[r].dark + ")";
-        self.current.textColor = self.colors[r].dark;
+        self.current.gradients.unshift({ light: self.colors[r].light, dark: self.colors[r].dark });
         self.fadeInNewColor();
       }
     },
@@ -286,7 +295,7 @@ var app = new Vue({
       self.current.gradientOpacity = 0;
 
       function moreOpaque() {
-        self.current.gradientOpacity += 0.08;
+        self.current.gradientOpacity += 0.04;
         if (self.current.gradientOpacity >= 1) {
           clearInterval(handle);
           self.current.gradientOpacity = 1;
@@ -297,7 +306,18 @@ var app = new Vue({
   },
 
   computed: {
-    playing() { return audio.paused; }
+    playing() { return audio.paused; },
+
+    currentGradient() {
+      let self = this;
+      return "radial-gradient(" + self.current.gradients[0].light + ", " + self.current.gradients[0].dark + ")";
+    },
+
+    previousGradient() {
+      let self = this;
+      return "radial-gradient(" + self.current.gradients[1].light + ", " + self.current.gradients[1].dark + ")";
+    }
+
   },
 
   mounted: function() {

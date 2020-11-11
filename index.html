@@ -7,7 +7,7 @@
     <link href="player-assets/css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2020-10-11@10:52:46">
+    <meta http-equiv="last-modified" content="2020-10-11@15:42:08">
     <link rel="apple-touch-icon" sizes="180x180" href="player-assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="player-assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="player-assets/img/favicon-16x16.png">
@@ -27,12 +27,15 @@
           </div>
           <div id="Tracks">
             <ul class="track-list">
-              <li v-for="(song, i) in songs" v-bind:class="{ active: (i == (current.num - 1)) }"><span>{{i+1}}. </span><a @click="playSong(i)"><span>{{song.title}}</span></a></li>
+              <template v-for="(song, i) in songs">
+                <li class="active" v-if="i == (current.num - 1)" :style="{'color': current.gradients[0].light}"><span>{{i+1}}. </span><span class="title"><span>{{song.title}}</span></span></li>
+                <li v-else><span>{{i+1}}. </span><a class="title" @click="playSong(i)"><span>{{song.title}}</span></a></li>
+              </template>
             </ul>
           </div>
           <div id="Current" v-if="current.num &gt; -1">
-            <div class="old-gradient background" :style="{'background': current.previousGradient }"></div>
-            <div class="current-gradient background" :style="{'background': current.background, 'opacity': current.gradientOpacity }"></div>
+            <div class="old-gradient background" :style="{'background': previousGradient }"></div>
+            <div class="current-gradient background" :style="{'background': currentGradient, 'opacity': current.gradientOpacity }"></div>
             <div class="inner">
               <h1><span class="track-name" id="TrackName">{{current.title}}</span></h1>
             </div>
@@ -66,7 +69,7 @@
           
         </script>
       </script>
-      <script src="player-assets/js/min/site.min.js?updated2020-10-11@10:52:46"></script>
+      <script src="player-assets/js/min/site.min.js?updated2020-10-11@15:42:08"></script>
     </div>
   </body>
 </html>

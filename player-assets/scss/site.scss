@@ -19,12 +19,13 @@ $tracks-width: 410px;
 
 body { font-family: "Lato"; }
 
-#Tracks { @include position(fixed,0,null,$audio-height,0); overflow-y: scroll; width:$tracks-width; background:#f1f3f4;
-  background: #333; color:#eee; padding:1rem 0 3rem 0;
+#Tracks { @include position(fixed,0,null,$audio-height,0); overflow-y: scroll; width:$tracks-width;
+  background: #212121; color:#eee; padding:1rem 0 3rem 0;
   &:after { content:' '; @include position(fixed,null,null,$audio-height,0); height:4rem; width:$tracks-width; background:linear-gradient(rgba(#333,0), rgba(#333,1)); }
   .track-list {
-    li { padding:0.75em 1em 0.75em 1em; border-left: 1em solid transparent; }
-    a { color:#e9e8ad; cursor: pointer; font-size:20px;
+    li { padding:0.75em 1em 0.75em 24px; border-right: 12px solid transparent; }
+    .title { font-size:20px; }
+    a { color:#f2efda; cursor: pointer;
       &:hover { text-decoration: underline; }
     }
     li.active { 
@@ -32,7 +33,7 @@ body { font-family: "Lato"; }
     }
   }
 }
-#Music { @include position(fixed,null,0,0,0); padding:10px; height: $audio-height;
+#Music { @include position(fixed,null,0,0,0); padding:10px; height: $audio-height; background:#f1f3f4;
   audio { width:100%; }
 }
 
@@ -43,7 +44,9 @@ body { font-family: "Lato"; }
   transition:background linear 1s;
   .background { @include position(fixed,0,0,$audio-height,$tracks-width); }
   .subject { font-size:20px; font-weight:400; color:white; mix-blend-mode: overlay; text-shadow: 1px 1px 1px rgba(0,0,0,0.25); margin-top:2em;
-    a { color:currentColor; text-decoration: underline; }
+    a { color:currentColor; text-decoration: underline;
+      &:hover, &:active { color:black; }
+    }
   }
 
   .subject { @include position(absolute,null,null,20px,20px); }

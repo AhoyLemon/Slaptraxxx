@@ -17,14 +17,22 @@ html(lang="en")
             
           #Tracks
             ul.track-list
-              li(v-for="(song, i) in songs" v-bind:class="{ active: (i == (current.num - 1)) }")
-                span {{i+1}}. 
-                a(@click="playSong(i)")
-                  span {{song.title}}
+              template(v-for="(song, i) in songs")
+                li.active(v-if="i == (current.num - 1)" :style="{'color': current.gradients[0].light}")
+                  span {{i+1}}. 
+                  span.title
+                    span {{song.title}}
+                li(v-else)
+                  span {{i+1}}. 
+                  a.title(@click="playSong(i)")
+                    span {{song.title}}
+
+                
+
 
           #Current(v-if="current.num > -1")
-            .old-gradient.background(:style="{'background': current.previousGradient }")
-            .current-gradient.background(:style="{'background': current.background, 'opacity': current.gradientOpacity }")
+            .old-gradient.background(:style="{'background': previousGradient }")
+            .current-gradient.background(:style="{'background': currentGradient, 'opacity': current.gradientOpacity }")
             .inner()
               h1
                 span.track-name#TrackName {{current.title}}
