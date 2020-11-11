@@ -1,0 +1,411 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+main,
+mark,
+menu,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video,
+xmp {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+li {
+  display: list-item;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td,
+caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left;
+}
+
+q {
+  quotes: none;
+}
+
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+sub,
+sup,
+small {
+  font-size: 75%;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+svg {
+  overflow: hidden;
+}
+
+/* playfair-display-regular - latin */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/playfair-display-v21-latin-regular.woff2") format("woff2"), url("../fonts/playfair-display-v21-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* playfair-display-700 - latin */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/playfair-display-v21-latin-700.woff2") format("woff2"), url("../fonts/playfair-display-v21-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* playfair-display-900 - latin */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/playfair-display-v21-latin-900.woff2") format("woff2"), url("../fonts/playfair-display-v21-latin-900.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-300 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"), local("Lato-Light"), url("../fonts/lato-v17-latin-300.woff2") format("woff2"), url("../fonts/lato-v17-latin-300.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-regular - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url("../fonts/lato-v17-latin-regular.woff2") format("woff2"), url("../fonts/lato-v17-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-900 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Lato Black"), local("Lato-Black"), url("../fonts/lato-v17-latin-900.woff2") format("woff2"), url("../fonts/lato-v17-latin-900.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+[v-cloak] {
+  display: none !important;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1.12rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+}
+
+body {
+  background: #eee;
+  color: #212121;
+  font-family: Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Lato";
+}
+
+#Tracks {
+  position: fixed;
+  top: 0;
+  bottom: 70px;
+  left: 0;
+  overflow-y: scroll;
+  width: 410px;
+  background: #f1f3f4;
+  background: #333;
+  color: #eee;
+  padding: 1rem 0 3rem 0;
+}
+#Tracks:after {
+  content: " ";
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  height: 4rem;
+  width: 410px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(51, 51, 51, 0)), to(#333333));
+  background: -o-linear-gradient(rgba(51, 51, 51, 0), #333333);
+  background: linear-gradient(rgba(51, 51, 51, 0), #333333);
+}
+#Tracks .track-list li {
+  padding: 0.75em 1em 0.75em 1em;
+  border-left: 1em solid transparent;
+}
+#Tracks .track-list a {
+  color: #e9e8ad;
+  cursor: pointer;
+  font-size: 20px;
+}
+#Tracks .track-list a:hover {
+  text-decoration: underline;
+}
+#Tracks .track-list li.active {
+  border-color: currentColor;
+}
+
+#Music {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  height: 70px;
+}
+#Music audio {
+  width: 100%;
+}
+
+#Current {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 70px;
+  overflow-y: auto;
+  width: calc(100% - 410px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background linear 1s;
+  -o-transition: background linear 1s;
+  transition: background linear 1s;
+}
+#Current .inner {
+  text-align: center;
+  padding: 40px;
+  position: relative;
+  padding-bottom: 40px;
+}
+#Current .track-name {
+  font-family: "Playfair Display", serif;
+  font-size: 9vw;
+  color: white;
+  mix-blend-mode: overlay;
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.25);
+}
+#Current .background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 70px;
+  left: 410px;
+}
+#Current .subject {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  mix-blend-mode: overlay;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  margin-top: 2em;
+}
+#Current .subject a {
+  color: currentColor;
+  text-decoration: underline;
+}
+#Current .subject {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+#Current .buttons {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+#Current .buttons button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  mix-blend-mode: overlay;
+  border: 2px solid currentColor;
+  padding: 10px;
+  cursor: pointer;
+}
+#Current .buttons button:hover, #Current .buttons button:active {
+  background: white;
+  color: black;
+}
+#Current .buttons button svg * {
+  fill: currentColor;
+}

@@ -1,0 +1,57 @@
+
+//GLOBALS, GET DEFAULTS
+@import "globals/_reset";
+@import "globals/_variables";
+@import "globals/_mixins";
+@import "globals/_extends";
+
+// LIBRARIES (if any)
+
+// SITE SPECIFIC
+@import "partials/_fonts";
+@import "partials/_variables";
+@import "partials/_z-index";
+@import "partials/_extends";
+@import "partials/_default";
+
+$audio-height:70px;
+$tracks-width: 410px;
+
+body { font-family: "Lato"; }
+
+#Tracks { @include position(fixed,0,null,$audio-height,0); overflow-y: scroll; width:$tracks-width; background:#f1f3f4;
+  background: #333; color:#eee; padding:1rem 0 3rem 0;
+  &:after { content:' '; @include position(fixed,null,null,$audio-height,0); height:4rem; width:$tracks-width; background:linear-gradient(rgba(#333,0), rgba(#333,1)); }
+  .track-list {
+    li { padding:0.75em 1em 0.75em 1em; border-left: 1em solid transparent; }
+    a { color:#e9e8ad; cursor: pointer; font-size:20px;
+      &:hover { text-decoration: underline; }
+    }
+    li.active { 
+      border-color: currentColor;
+    }
+  }
+}
+#Music { @include position(fixed,null,0,0,0); padding:10px; height: $audio-height;
+  audio { width:100%; }
+}
+
+#Current { @include position(fixed,0,0,$audio-height,null); overflow-y: auto; width:calc(100% - #{$tracks-width});
+  display: flex; justify-content: center; align-items: center;
+  .inner { text-align: center; padding:40px; position: relative; padding-bottom:40px; }
+  .track-name { font-family: $serif; font-size:9vw; color:white; mix-blend-mode: overlay; text-shadow: 3px 3px 1px rgba(0,0,0,0.25); }
+  transition:background linear 1s;
+  .background { @include position(fixed,0,0,$audio-height,$tracks-width); }
+  .subject { font-size:20px; font-weight:400; color:white; mix-blend-mode: overlay; text-shadow: 1px 1px 1px rgba(0,0,0,0.25); margin-top:2em;
+    a { color:currentColor; text-decoration: underline; }
+  }
+
+  .subject { @include position(absolute,null,null,20px,20px); }
+  .buttons { @include position(absolute,null,20px,20px,null);
+    button { width:3rem; height:3rem; border-radius: 50%; background:transparent; color:white; mix-blend-mode: overlay; border:2px solid currentColor; padding:10px; cursor:pointer;
+      &:hover, &:active { background:white; color:black; }
+      svg * { fill:currentColor; }
+    }
+  }
+}
+

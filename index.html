@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Music of Garbage Day</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="player-assets/css/site.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta http-equiv="last-modified" content="2020-10-11@10:52:46">
+    <link rel="apple-touch-icon" sizes="180x180" href="player-assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="player-assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="player-assets/img/favicon-16x16.png">
+    <link rel="manifest" href="player-assets/img/site.webmanifest">
+    <link rel="mask-icon" href="player-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="player-assets/img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-config" content="player-assets/img/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <main style="height:100vh; display:flex; align-items:center; justify-content:center;">
+        <div class="inner">
+          <div id="Music">
+            <audio id="AudioElement" autoplay controls :src="audioSrc"></audio>
+          </div>
+          <div id="Tracks">
+            <ul class="track-list">
+              <li v-for="(song, i) in songs" v-bind:class="{ active: (i == (current.num - 1)) }"><span>{{i+1}}. </span><a @click="playSong(i)"><span>{{song.title}}</span></a></li>
+            </ul>
+          </div>
+          <div id="Current" v-if="current.num &gt; -1">
+            <div class="old-gradient background" :style="{'background': current.previousGradient }"></div>
+            <div class="current-gradient background" :style="{'background': current.background, 'opacity': current.gradientOpacity }"></div>
+            <div class="inner">
+              <h1><span class="track-name" id="TrackName">{{current.title}}</span></h1>
+            </div>
+            <h3 class="subject" v-if="current.subject"><span v-if="current.hour">Hour {{current.hour}}: <a :href="current.page" target="_blank">{{current.subject}}</a></span></h3>
+            <div class="buttons" v-if="current.num &gt; -1">
+              <button class="prev-track" @click="playSong(current.num - 2)">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve">
+                  <path d="M76.9 92.9c.8 0 1.5-.1 2.3-.4 2.2-.9 3.6-3.1 3.6-5.4V12.8c0-3.2-2.6-5.9-5.9-5.9-1.6 0-3.1.6-4.2 1.7l-37 37.1c-2.3 2.2-2.3 5.9-.1 8.2l.1.1 37.1 37.1c1.1 1.2 2.6 1.8 4.1 1.8zM29.7 81.2V18.7c0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4v62.5c0 5.2 4.2 9.4 9.4 9.4s9.4-4.3 9.4-9.4z"></path>
+                </svg>
+              </button>
+              <button class="stop-song" @click="stopSong()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                  <path d="M78.7 91.5H21.3c-6.6 0-12-5.4-12-12V22.2c0-6.6 5.4-12 12-12h57.3c6.6 0 12 5.4 12 12v57.3c.1 6.6-5.3 12-11.9 12z"></path>
+                </svg>
+              </button>
+              <button class="next-track" @click="playSong(current.num)">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve">
+                  <path d="M16.8 6.9c-.8 0-1.5.1-2.2.4-2.2.9-3.6 3.1-3.6 5.4V87c0 3.2 2.6 5.9 5.9 5.9 1.6 0 3.1-.6 4.2-1.7l37.1-37.1c2.3-2.2 2.3-5.9.1-8.2l-.1-.1L21 8.6c-1.1-1.1-2.6-1.7-4.2-1.7zM64.1 18.6v62.5c0 5.2 4.2 9.4 9.4 9.4s9.4-4.2 9.4-9.4V18.6c0-5.2-4.2-9.4-9.4-9.4-5.2.1-9.4 4.3-9.4 9.4z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="javascripts">
+      <script src="player-assets/js/libraries/vue.full.js">
+        <script>
+          alert('huh')
+          const testing = true;
+          
+        </script>
+      </script>
+      <script src="player-assets/js/min/site.min.js?updated2020-10-11@10:52:46"></script>
+    </div>
+  </body>
+</html>
