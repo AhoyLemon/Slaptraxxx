@@ -1,4 +1,4 @@
-# This is the music of Garbage Day!
+# This is the music of Garbage Day 2020
 
 Thanks for buying a slap bracelet. All the MP3's are located in the Music Files folder.
 

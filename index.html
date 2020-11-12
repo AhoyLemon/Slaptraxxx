@@ -7,7 +7,7 @@
     <link href="player-assets/css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2020-10-11@15:42:08">
+    <meta http-equiv="last-modified" content="2020-10-11@20:11:27">
     <link rel="apple-touch-icon" sizes="180x180" href="player-assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="player-assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="player-assets/img/favicon-16x16.png">
@@ -32,6 +32,16 @@
                 <li v-else><span>{{i+1}}. </span><a class="title" @click="playSong(i)"><span>{{song.title}}</span></a></li>
               </template>
             </ul>
+          </div>
+          <div id="Intro" v-if="current.num &lt; 0">
+            <div class="inner">
+              <p>Thank you for buying a Slap Bracelet.</p>
+              <p>All songs produced by  <a href="https://thefpl.us/meet/boots-raingear">Boots Raingear</a></p>
+              <p>except Track 25, produced by <a href="https://thefpl.us/meet/jimmyfranks">Jimmyfranks</a></p>
+              <p>and Track 27, produced by <a href="https://thefpl.us/meet/j-w-friedman">J W Friedman</a>.</p>
+              <p>Tracks 8 & 25 feature <a href="https://thefpl.us/meet/bunnybread">Bunnybread</a>.</p>
+              <p>This app was made by <a href="https://thefpl.us/meet/lemon">Lemon</a>.</p>
+            </div>
           </div>
           <div id="Current" v-if="current.num &gt; -1">
             <div class="old-gradient background" :style="{'background': previousGradient }"></div>
@@ -69,7 +79,7 @@
           
         </script>
       </script>
-      <script src="player-assets/js/min/site.min.js?updated2020-10-11@15:42:08"></script>
+      <script src="player-assets/js/min/site.min.js?updated2020-10-11@20:11:27"></script>
     </div>
   </body>
 </html>

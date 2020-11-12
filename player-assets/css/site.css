@@ -294,11 +294,12 @@ body {
   position: fixed;
   bottom: 70px;
   left: 0;
-  height: 4rem;
+  height: 130px;
   width: 410px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(51, 51, 51, 0)), to(#333333));
-  background: -o-linear-gradient(rgba(51, 51, 51, 0), #333333);
-  background: linear-gradient(rgba(51, 51, 51, 0), #333333);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 33, 33, 0)), to(#212121));
+  background: -o-linear-gradient(rgba(33, 33, 33, 0), #212121);
+  background: linear-gradient(rgba(33, 33, 33, 0), #212121);
+  pointer-events: none;
 }
 #Tracks .track-list li {
   padding: 0.75em 1em 0.75em 24px;
@@ -413,4 +414,41 @@ body {
 }
 #Current .buttons button svg * {
   fill: currentColor;
+}
+
+#Intro {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 70px;
+  overflow-y: auto;
+  width: calc(100% - 410px);
+  padding: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 0;
+}
+#Intro .inner {
+  font-size: 32px;
+  font-family: "Playfair Display", serif;
+  color: #555;
+  text-align: right;
+}
+#Intro .inner p {
+  margin-bottom: 1em;
+}
+#Intro .inner a {
+  text-decoration: none;
+  color: #444499;
+}
+#Intro .inner a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }

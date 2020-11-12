@@ -28,6 +28,22 @@ html(lang="en")
                     span {{song.title}}
 
                 
+          #Intro(v-if="current.num < 0")
+            .inner
+              p Thank you for buying a Slap Bracelet.
+              p All songs produced by  
+                a(href="https://thefpl.us/meet/boots-raingear") Boots Raingear
+              p except Track 25, produced by 
+                a(href="https://thefpl.us/meet/jimmyfranks") Jimmyfranks
+              p and Track 27, produced by 
+                a(href="https://thefpl.us/meet/j-w-friedman") J W Friedman
+                | .
+              p Tracks 8 & 25 feature 
+                a(href="https://thefpl.us/meet/bunnybread") Bunnybread
+                | .
+              p This app was made by 
+                a(href="https://thefpl.us/meet/lemon") Lemon
+                | .
 
 
           #Current(v-if="current.num > -1")

@@ -1,5 +1,3 @@
-const audio = document.getElementById('AudioElement');
-
 var app = new Vue({
   el: '#app',
   data: {
@@ -198,7 +196,7 @@ var app = new Vue({
       {
         file: "24 - Cow Dick.mp3",
         title: "Cow Dick",
-        hour:  23,
+        hour:  24,
         subject: "The Final Hour",
         page: "https://thefpl.us/episode/garbage-day-2020-4"
       },
@@ -229,31 +227,9 @@ var app = new Vue({
       { light: "#ED213A", dark: "#93291E" }, // red
       { light: "#6FB1FC", dark: "#0052D4" }, // lagoon
       { light: "#DA22FF", dark: "#9733EE" }, // purple
-    ],
-    animations: [
-      'backInDown',
-      'backInLeft',
-      'backInRight',
-      'backInUp',
-      'bounceIn',
-      'bounceInDown',
-      'bounceInLeft',
-      'bounceInRight',
-      'bounceInUp',
-      'fadeInDown',
-      'fadeInLeft',
-      'fadeInRight',
-      'fadeInUp',
-      'fadeInTopLeft',
-      'fadeInTopRight',
-      'fadeInBottomLeft',
-      'fadeInBottomRight',
-      'flipInX',
-      'flipInY',
-      'lightSpeedInLeft',
-      'lightSpeedInRight',
-      'rotateIn',
-      'jackInTheBox',
+      { light: "#ec38bc", dark: "#7303c0" }, // purple -> pink
+      { light: "#AA076B", dark: "#61045F" }, // purples
+      { light: "#F09819", dark: "#FF512F" }, // green -> yellow
     ],
     previousColors: -1
   },
@@ -269,7 +245,7 @@ var app = new Vue({
       self.current.hour = song.hour;
       self.current.page = song.page;
       self.newColor();
-      audio.play();
+      document.getElementById('AudioElement').play();
     },
 
     stopSong() {
@@ -306,7 +282,7 @@ var app = new Vue({
   },
 
   computed: {
-    playing() { return audio.paused; },
+    playing() { return document.getElementById('AudioElement').paused; },
 
     currentGradient() {
       let self = this;
