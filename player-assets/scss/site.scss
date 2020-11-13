@@ -20,7 +20,7 @@ $tracks-width: 410px;
 body { font-family: "Lato"; }
 
 #Tracks { @include position(fixed,0,null,$audio-height,0); overflow-y: scroll; width:$tracks-width;
-  background: #212121; color:#eee; padding:1rem 0 3rem 0;
+  background: #212121; color:#eee; padding:4rem 0 6rem 0;
   &:after { content:' '; @include position(fixed,null,null,$audio-height,0); height:130px; width:$tracks-width; background:linear-gradient(rgba(#212121,0), rgba(#212121,1)); pointer-events: none; }
   .track-list {
     li { padding:0.75em 1em 0.75em 24px; border-right: 12px solid transparent; }
@@ -58,9 +58,10 @@ body { font-family: "Lato"; }
   }
 }
 
-#Intro { @include position(fixed,0,0,$audio-height,null); overflow-y: auto; width:calc(100% - #{$tracks-width}); padding:3%;
-  display: flex;  justify-content: flex-end; align-items: flex-end; padding-bottom:0;
+#Intro { @include position(fixed,0,0,$audio-height,null); overflow-y: auto; width:calc(100% - #{$tracks-width}); padding:3%; display: flex;  justify-content: flex-end; align-items: flex-end; padding-bottom:0;
+  .logo { width: 70%; position: fixed; bottom: 0; right: 0; transform: translate(20%, 25%); z-index: 9; mix-blend-mode: color-dodge; opacity: 0.07; pointer-events: none; }
   .inner { font-size:32px; font-family: $serif; color:#555; text-align: right;
+    strong { font-weight: 900; }
     p { margin-bottom: 1em; }
     a { text-decoration:none; color:#444499;
       &:hover { text-decoration: underline; text-decoration-thickness: 2px; }

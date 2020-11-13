@@ -287,7 +287,7 @@ body {
   width: 410px;
   background: #212121;
   color: #eee;
-  padding: 1rem 0 3rem 0;
+  padding: 4rem 0 6rem 0;
 }
 #Tracks:after {
   content: " ";
@@ -435,11 +435,27 @@ body {
           align-items: flex-end;
   padding-bottom: 0;
 }
+#Intro .logo {
+  width: 70%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translate(20%, 25%);
+      -ms-transform: translate(20%, 25%);
+          transform: translate(20%, 25%);
+  z-index: 9;
+  mix-blend-mode: color-dodge;
+  opacity: 0.07;
+  pointer-events: none;
+}
 #Intro .inner {
   font-size: 32px;
   font-family: "Playfair Display", serif;
   color: #555;
   text-align: right;
+}
+#Intro .inner strong {
+  font-weight: 900;
 }
 #Intro .inner p {
   margin-bottom: 1em;

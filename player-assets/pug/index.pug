@@ -20,7 +20,7 @@ html(lang="en")
               template(v-for="(song, i) in songs")
                 li.active(v-if="i == (current.num - 1)" :style="{'color': current.gradients[0].light}")
                   span {{i+1}}. 
-                  span.title
+                  span.title#SongTitle
                     span {{song.title}}
                 li(v-else)
                   span {{i+1}}. 
@@ -29,22 +29,28 @@ html(lang="en")
 
                 
           #Intro(v-if="current.num < 0")
+
+            svg.logo(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349.5 296.7")
+              path(d="M200.7 2.6c-43.2 0-82 18.8-108.7 48.7h171.8l-12.5 13.5c-6.1 6.6-6.2 6.7-11.6 15-4.4 6.7-3.2 13.9-3.2 14l1.7 8.4h-47.8l5.9-11.8-31.2.2-20.9 51.5h27l14-31.3 48.6-.1-14.1 31.4h37l-18.8 44-38 .1-14.4 32.8-48.6.1 14.7-32.8-26.4.1-20.4 45.3c-2.7 5.9-6.1 11.2-10.2 15.9 26.6 28.4 64.4 46.1 106.3 46.1 80.4 0 145.6-65.2 145.6-145.6S281.1 2.6 200.7 2.6z" fill="#c0282d")
+              path(d="M246.3 149.1H209l14-31.4-33.2.1-14 31.3h-42l26.6-65.6 47.3-.2-5.9 11.9h27.8s-2-9.8 4.2-19.2c6.1-9.5 6.1-9.2 13.9-17.6h-198s-8.5 5.4-8.5 13.7c0 8.4 7.5 11.7 7.5 11.7l65.8-.2L86 149.1c-29 10.9-49.6 30-61.7 57.4l-13.9 30.9c-1 2.3-1.6 4.5-1.6 6.6 0 6.1 4.1 10.9 12.3 14.5 6.7 2.9 14 4.4 21.7 4.4 11.8 0 22.4-2.7 31.8-8.2 10.7-6.1 18.6-14.7 23.6-25.8l22.3-49.4 41.8-.1-14.7 32.8 33.2-.1 14.7-32.8 37.9-.1 12.9-30.1zM47.5 235.4c-1.7 3.4-4.2 5-7.6 5-2.9 0-4.4-1.1-4.4-3.1 0-.4.1-.8.3-1.3L49 206.4c6.9-16 14.7-25 23.3-27.1-11.2 25-19.5 43.8-24.8 56.1z" fill="#222221")
+
             .inner
-              p Thank you for buying a Slap Bracelet.
+              p 
+                strong(sty) Thank you for buying a Slap Bracelet
+                | .
               p All songs produced by  
-                a(href="https://thefpl.us/meet/boots-raingear") Boots Raingear
+                a(href="https://thefpl.us/meet/boots-raingear" target="_blank") Boots Raingear
               p except Track 25, produced by 
-                a(href="https://thefpl.us/meet/jimmyfranks") Jimmyfranks
+                a(href="https://thefpl.us/meet/jimmyfranks" target="_blank") Jimmyfranks
               p and Track 27, produced by 
-                a(href="https://thefpl.us/meet/j-w-friedman") J W Friedman
+                a(href="https://thefpl.us/meet/j-w-friedman" target="_blank") J W Friedman
                 | .
               p Tracks 8 & 25 feature 
-                a(href="https://thefpl.us/meet/bunnybread") Bunnybread
+                a(href="https://thefpl.us/meet/bunnybread" target="_blank") Bunnybread
                 | .
               p This app was made by 
-                a(href="https://thefpl.us/meet/lemon") Lemon
+                a(href="https://thefpl.us/meet/lemon" target="_blank") Lemon
                 | .
-
 
           #Current(v-if="current.num > -1")
             .old-gradient.background(:style="{'background': previousGradient }")
