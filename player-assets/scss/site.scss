@@ -19,10 +19,9 @@ $tracks-width: 410px;
 
 body { font-family: "Lato"; }
 
-#Tracks { @include position(fixed,0,null,$audio-height,0); overflow-y: scroll; width:$tracks-width;
-  background: #212121; color:#eee; padding:4rem 0 6rem 0;
+#Tracks { @include position(fixed,0,null,$audio-height,0); overflow-y: scroll; width:$tracks-width; background: #212121; color:#eee;
   &:after { content:' '; @include position(fixed,null,null,$audio-height,0); height:130px; width:$tracks-width; background:linear-gradient(rgba(#212121,0), rgba(#212121,1)); pointer-events: none; }
-  .track-list {
+  .track-list { margin-top:100px; margin-bottom: 140px;
     li { padding:0.75em 1em 0.75em 24px; border-right: 12px solid transparent; }
     .title { font-size:20px; }
     a { color:#f2efda; cursor: pointer;

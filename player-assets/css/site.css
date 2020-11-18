@@ -287,7 +287,6 @@ body {
   width: 410px;
   background: #212121;
   color: #eee;
-  padding: 4rem 0 6rem 0;
 }
 #Tracks:after {
   content: " ";
@@ -300,6 +299,10 @@ body {
   background: -o-linear-gradient(rgba(33, 33, 33, 0), #212121);
   background: linear-gradient(rgba(33, 33, 33, 0), #212121);
   pointer-events: none;
+}
+#Tracks .track-list {
+  margin-top: 100px;
+  margin-bottom: 140px;
 }
 #Tracks .track-list li {
   padding: 0.75em 1em 0.75em 24px;
