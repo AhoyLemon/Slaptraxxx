@@ -63,6 +63,9 @@ html(lang="en")
               span(v-if="current.hour")
                 | Hour {{current.hour}}: 
                 a(:href="current.page" target="_blank") {{current.subject}}
+            
+            h3.byline(v-if="current.byline" v-html="current.byline")
+              
 
             .buttons(v-if="current.num > -1")
               button.prev-track(@click="playSong(current.num - 2)")

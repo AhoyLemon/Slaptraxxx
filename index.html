@@ -7,7 +7,7 @@
     <link href="player-assets/css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2020-10-12@18:36:05">
+    <meta http-equiv="last-modified" content="2020-10-17@20:12:24">
     <link rel="apple-touch-icon" sizes="180x180" href="player-assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="player-assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="player-assets/img/favicon-16x16.png">
@@ -54,6 +54,7 @@
               <h1><span class="track-name" id="TrackName">{{current.title}}</span></h1>
             </div>
             <h3 class="subject" v-if="current.subject"><span v-if="current.hour">Hour {{current.hour}}: <a :href="current.page" target="_blank">{{current.subject}}</a></span></h3>
+            <h3 class="byline" v-if="current.byline" v-html="current.byline"></h3>
             <div class="buttons" v-if="current.num &gt; -1">
               <button class="prev-track" @click="playSong(current.num - 2)">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve">
@@ -83,7 +84,7 @@
           
         </script>
       </script>
-      <script src="player-assets/js/min/site.min.js?updated2020-10-12@18:36:05"></script>
+      <script src="player-assets/js/min/site.min.js?updated2020-10-17@20:12:24"></script>
     </div>
   </body>
 </html>

@@ -201,14 +201,20 @@ var app = new Vue({
         page: "https://thefpl.us/episode/garbage-day-2020-4"
       },
       {
+        file: '5 - Pooner & The Snizz - KLAP.mp3',
+        title: 'Pooner & The Snizz On KLAP 102.9',
+        bonus: true
+      },
+      {
         file: 'BONUS - SnizzBop.mp3',
         title: 'MmmBop - Pooner & The Snizz $5k Remix',
         bonus: true
       },
       {
-        file: '5 - Pooner & The Snizz - KLAP.mp3',
-        title: 'Pooner & The Snizz On KLAP 102.9',
-        bonus: true
+        file: 'JW Friedman - No Dignity.mp3',
+        title: 'J. W. Friedman: No Dignity',
+        bonus: true,
+        byline: '(a moody cover of Blackstreet&apos;s "No Diggity" by <a href="https://www.idontevenownatelevision.com" target="_blank">J. W. Friedman</a>)'
       }
     ],
     colors: [
@@ -244,6 +250,7 @@ var app = new Vue({
       self.current.subject = song.subject;
       self.current.hour = song.hour;
       self.current.page = song.page;
+      self.current.byline = song.byline;
       self.newColor();
       document.getElementById('AudioElement').play();
     },
